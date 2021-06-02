@@ -1,0 +1,121 @@
+<style>
+
+  .homeScreen{
+
+    height: 100%;
+    width:100%;
+    display:inline-flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  
+  #indiaImg{
+    width:4em;
+    margin:1% 0% 0% 0%;
+  }
+  .indiaImgCol{
+    width:13%;
+    
+  padding-bottom: 5px;
+  }
+  
+  .homeScreen h1{
+    text-align: center;
+    background-color: #282A35;
+    color: white;
+    width: 80.2%;
+    font-size: 2.5rem;
+    padding:1.5% 0% 1.5% 0%;
+    border-radius: 8px 8px 0px 0px;
+    box-shadow: 0px 1px 2px black;
+  }
+  #covidRow{
+    width:80%;
+    height:45%;
+    box-shadow: 0px 0px 2px black;  }
+  #covidRow h3{
+    font-size: 1.5em;
+    
+  }
+  /* media query */
+  @media(max-width:395px){
+  .col-sm-4 h3{
+font-size: 1.2em !important;
+}
+.homeScreen h1{
+  font-size: 2.2rem;
+}
+}
+@media(max-width:360px){
+  #covidRow{
+  height:38%;
+  }
+  .homeScreen h1{
+    font-size: 2rem;
+  }
+}
+
+  @media screen and (max-width:1110px) and (min-width:764px) {
+   #covidRow{font-size: 1.2rem;
+   } 
+   .col-sm-4{
+     height:50%;
+    
+   }
+   .badge{
+     /* padding-bottom: 2%; */
+     margin-bottom: 3%;
+   }
+  }
+@media(max-width:767px){
+  .col-sm-4 h3{
+    
+    margin-top: 0px;
+  }
+  .col-sm-4{
+    height:40%;
+  }
+  
+}
+@media(max-width:245px){
+#indiaImg{
+  width:40%
+}  
+h3{
+  font-size: 50px;
+}
+}
+
+</style>
+
+<div class="container-fluid homeScreen" >
+
+  <h1 style="margin-bottom: 0;">Covid-19 Data India</h1>
+    <div  id="covidRow"class="row bg-danger" >
+      <div class="col-sm-12">
+       
+    <img id="indiaImg"src="/images/indiaPng.png">
+     <div class="badge" style="padding:1%;margin-left:1%;margin-top: 0.5%; width:92%;background-color: white;">
+      <marquee style="color: black;">State: <span style="color: royalblue;">{{covidData[28].state}}</span>,Confirmed: {{covidData[28].confirmed|number}}, Recovered: <span style="color: green;">{{covidData[0].recovered|number}}</span>, Deaths: <span style="color: red;">{{covidData[28].deaths|number}}</span></marquee></div>
+    <h5 style="margin: 0;">India</h5>
+  <h3 id="updateHeading"style="margin-top:1%;">Last Updated Time:</h3>
+  <p>{{covidData[0].lastupdatedtime}}
+  </p></div>
+  
+    <div class="col-sm-4" style="background-color:lavender;">
+    <span ><h3>Total Confirmed:
+    </h3><img class="indiaImgCol"src="/images/indiaPng.png"></span>
+    <span class="badge"style="background-color:grey">{{covidData[0].confirmed|number}}</span></div>
+  <div class="col-sm-4" style="background-color:lavenderblush;">
+  <span><h3>Total Recovered:</h3><img class="indiaImgCol"src="/images/indiaPng.png">
+    </span>
+    <span class="badge"style="background-color:green">{{covidData[0].recovered|number}}</span></div>
+  <div class="col-sm-4" style="background-color:lavender;">
+  <h3>Total Deaths:</h3>
+  <img class="indiaImgCol"src="/images/indiaPng.png">
+  <span class="badge"style="background-color:red">{{covidData[0].deaths|number}}</span></div>
+  
+</div>
+</div>
+</div>

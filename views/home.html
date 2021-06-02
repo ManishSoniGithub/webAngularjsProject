@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/stylesheets/home.css">
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- angularjs cdn's -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.2/angular-route.min.js"></script>
+<!-- javascript files -->
+    <script src="http://localhost:4000/javascripts/userRoutes.js"></script>
+
+</head>
+<body ng-app="myApp">
+  <table class="tableMain">                                                                 
+    
+<tr id="headerRow">
+  
+    <td colspan="2" class="header"><span><i class='fas fa-graduation-cap' style='font-size:24px'></i>
+    </button>
+    </span>University Portal</td>
+  </div>
+</tr>
+<tr>
+  <td id="leftBarTd">
+    <ul style="height: 100%; padding-left:2%;padding-top: 2%;">
+      <!-- menu icon -->
+      <div style="cursor:pointer;;background-color:transparent;font-size:1.5em;"onclick="openNav()" id="sideBtn">&#9776; Menu</div>
+      <!-- left slide  -->
+      <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <li class="leftContent"><a href="#!home">Home</a></li>
+      <li class="leftContent"><a href="#!addStudent">New Admission</a></li>
+      <li class="leftContent"><a href="#!studentsView">Students Data</a></li>
+      <li class="leftContent"><a href="#!covidData">Covid-19</a></li>
+        </div>
+        
+     
+      
+        
+      
+  </ul>
+  
+
+  </td>
+
+
+
+    
+    <td id="contentView">
+       
+        
+        
+        <ng-view></ng-view></td>
+</tr>
+<tr>
+    <td colspan="2" id="footer">
+      <h5 class="text-center">All rights are reserved &#169;</h5>
+    </td>
+</tr>
+
+   </table>
+
+   <script>
+    function openNav() {
+      
+      
+     var x= window.matchMedia("(max-width:345px)");
+     if(x.matches){
+        document.getElementById("mySidenav").style.width="40vw";
+      }
+      else{
+      document.getElementById("mySidenav").style.width = "23vw";
+
+      }
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+// var nav=document.getElementById("mySidenav");
+// var hover=document.getElementById("footer").style.hover.backgroundColor="green";
+// // if(nav.style.width>0 &&  ){
+
+// }
+  
+    </script>
+</body>
+</html>

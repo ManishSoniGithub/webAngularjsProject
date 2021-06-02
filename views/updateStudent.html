@@ -1,0 +1,100 @@
+<style>
+.editMain{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: inherit;
+    }
+    .editStudent{
+        border-radius: 2%;
+        
+        height:100%;
+      flex-wrap: wrap;
+      flex-shrink: inherit;  
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+    align-items: center;
+        width:100%;
+    }
+    #editForm{
+        width:60%;
+        
+    display: flex;
+
+flex-basis: 40%;
+    column-gap: 5%;
+    
+        align-items: center;
+        justify-content: center;
+flex-wrap: wrap;
+        background-color:#F2DEDE;
+        box-shadow: 0px 0px 2px black; 
+    }
+    #editForm input{
+        width:100%;
+        border: 0px;
+        box-shadow: 0px 0px 2px black;
+        border-radius: 4px;
+    }
+    
+    .editStudent h3{
+        width:60%;
+        color:white;
+        background-color: #282A35;
+        text-align: center;
+        margin-bottom: 0px;
+        padding:1.5% 1.5%;
+        border-radius: 0.5em 0.5em 0px 0px ;
+        font-size: 2.5rem;
+        box-shadow:0px 0px 2px black ;
+    }
+    label{
+    display: block;
+        margin:0px;
+        font-size: 1.5rem;
+    }
+</style>
+
+<div class="container-fluid bg-danger editMain">
+   <div class="editStudent">
+    <h3>Edit Student Data: </h3>  
+<form id="editForm"style="">
+    <div>
+    <label for="editfname" >Edit:First Name</label>
+    <input type="text" ng-model="singleStu.fname" placeholder="First Name" id="editfname"></div>
+    <div>
+    <label for="editfname">Edit:Last Name</label>
+    <input type="text" ng-model="singleStu.lname"placeholder="Last Name" id="editlname">
+</div>
+<div>
+    <label for="editfname">Edit:Course</label>
+    <input type="text" ng-model="singleStu.course"placeholder="Course" id="editcourse"></div>
+    <div>
+    <label for="editfname">Edit:Age</label>
+    <input type="text" ng-model="singleStu.age"placeholder="Age" id="editage">
+</div>
+<div>
+    <label for="editfname">Edit:Roll No</label>
+    <input type="text" ng-model="singleStu.rollno"placeholder="Roll No" id="editrollno">
+    </div>
+    <div>
+    <label for="editfname">Edit:Mobile No</label>
+    <input type="text" ng-model="singleStu.mobileno"placeholder="Mobile No" id="editmobileno">
+    </div>
+    <div style="display: flex;flex-wrap: wrap; flex-direction: column;width:100%;align-items:center; justify-content: center; ">
+    <label for="editfname">Edit:Address</label>
+    <input type="text" ng-model="singleStu.address"style="width:80%;" placeholder="Address" id='editaddress'>
+    </div>
+
+    <div><input value="Submit"type="submit  " ng-click="update()"value="button" style="width:25vw;margin-top:5%;color:white;text-align:center;background-color:#282A35;margin-bottom: 5%;padding-top:1%;padding-bottom: 1%;"></div>    
+</form>
+
+      
+
+   </div> 
+
+
+</div>

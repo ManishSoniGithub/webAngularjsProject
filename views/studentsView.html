@@ -1,0 +1,106 @@
+<style>
+#stuInfo{
+    
+    display: flex;
+    flex-direction: column;
+    /* justify-content: right;  */
+    align-items: center;
+background-color:transparent;
+width:100%;
+height:80vh;
+
+}
+#studentTable {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  background-color:#F2DEDE; 
+  
+}
+#studentTable{
+    width:100%;
+ 
+
+}
+#studentTable td{
+ border: 1px solid;
+}
+#studentTable th{
+    border: 1px solid;
+}
+#tableDiv{
+overflow: auto;
+height:80%;
+width:90%;
+box-shadow: 0px 1px 3px black;
+    }
+#tableHead{
+    background-color:#282A35;
+    color:white;
+    text-align:center;
+box-shadow: 0px 1px 3px black;    
+    padding-bottom: 0.7%;
+/* margin-top:3%; */
+    border-top-right-radius:8px;
+    border-top-left-radius:8px;
+    width:90%;
+    display:flex;
+    align-items:center;
+    padding-left: 1%;
+}
+#stuViewSearch{
+    border-radius: 4px;
+    width:20%;
+color:black;
+    margin-top: 0.8%;
+}
+.tableHeading{
+    width:60%;
+    font:bolder;
+    font-size: 2.5rem;
+    
+}
+</style>
+<div class="constainer-fluid bg-success" id="stuInfo">
+    <div id="tableHead">
+    <input id="stuViewSearch"type="text" ng-model="test" placeholder="Filter: Name/Course/Roll no">
+    <h3 class="tableHeading" >Student details</h3>
+</div>
+   <div id="tableDiv">
+   
+
+<table class="table table-hover table-responsive" id="studentTable">
+    
+      <thead>
+        <tr>
+
+        <th>Name
+
+        </th>
+        <th>Course</th>
+        <th>Roll no</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+<tbody>
+    
+    <!-- two filter used here 'orderBy' and 'search matching data   ' -->
+    <tr ng-repeat="student in stuData | orderBy:'fname'|filter:test ">
+        <td><a href="#!singleStudent/{{student._id}}">{{student.fname}} {{student.lname}}</td>
+        <td>{{student.course }}</td>
+        <td>{{student.rollno}}</td>
+        <td><a href="#!updateStudent/{{student._id}}"><span><i class="fa fa-edit" style="font-size:24px"></i>
+        </span></a></td>
+        <td><a href="#!delStudent/{{student._id}}"><span> <i class="fa fa-trash" aria-hidden="true" style="font-size:24px;color:red"></i></span></a></td>
+    </tr>
+</tbody>
+
+</table>
+
+</div>
+
+</div>

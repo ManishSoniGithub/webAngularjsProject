@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- custom css file -->
+    <link href="http://localhost:4000/stylesheets/register.css" rel="stylesheet">
+    <!-- bootstrap cdn's -->
+     <link href="http://localhost:4000/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <script src="http://localhost:4000/bootstrap/dist/js/jquery.js"></script>
+    <!-- <script src="http://localhost:4000/bootstrap/dist/js/popper.js"></script> -->
+    <script src="http://localhost:4000/bootstrap/dist/js/bootstrap.min.js"></script> 
+
+ <!-- angularjs cdn's files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<!-- angularjs file -->
+    <script src="http://localhost:4000/javascripts/register.js" ></script>
+</head>
+<style>
+
+</style>
+
+<body ng-app="myModule" ng-controller="userController">
+    <div class="container-fluid m-0 p-0">
+        <div id="headerMain">
+            <div class="header" id="rightHeader">
+                <h3>Student Portal</h3>
+            </div>
+            <div class="header" id="leftHeader">
+                
+                <form style="height:8vh">
+                    <div id="formFlex" style="display: flex;justify-content: center;flex-direction: row; height
+                    : 100%;">
+                  
+                
+                        <div class="formItems" style="display:flex;flex-direction: column;">
+                        <label for="name" class="mb-0">User Name or Email</label>
+                            <input id="logName"class="loginName" ng-model="loginObj.user"type="text" placeholder="User Name" id="name" />
+                        </div>
+                    <div class="formItems"style="display:flex;flex-direction: column;">
+                        <label for="loginPswrd" class="mb-0">Password</label>
+                            <input id="logPass" class="loginPass"ng-model="loginObj.password" type="password" placeholder="Password" id="loginPswrd" />
+                            <span>
+                            
+                            <input type="checkbox" onclick="fun1()">
+                            <label style="margin-bottom: 3%;vertical-align:middle;">Show</label>.
+                        </span>
+                        </div>
+                        <span class="formItems">             
+                        
+                        <input type="submit" id="logInBtn" value="LogIn" ng-click="login()" class="btn">
+                        </span>
+                    </div>
+            </form>
+
+            </div>
+        </div>
+   
+        <div class="flex"  >
+<form class="form  formSignUp"id="formSignUp">
+                    <h3 id="signUpHead">Register</h3>
+                    <p id="formInfo">*All fields are mandatory:</p>
+                    <div id="inputDiv">
+
+                        <div class="inputSignUp">
+                    <input type="text" ng-model="student.user" placeholder="User Name">
+                </div>
+                <div class="inputSignUp">
+                  <input type="text" ng-model="student.institute" placeholder="Institute">
+                </div>
+                <div class="inputSignUp">
+                    <input type="text" ng-model="student.address"  placeholder="Address">
+                </div>
+                <div class="inputSignUp">
+                    <input type="email" ng-model="student.email"  placeholder="Email">
+                </div>
+                <div class="inputSignUp">
+                    <input type="password" ng-model="student.password" id="pswrd" 
+                        placeholder="Create Password">
+                    </div>
+                    <div class="inputSignUp">
+                        
+                            <input type="checkbox" id="show" onclick="fun()" /> 
+                            <label>Show </label>
+                        </div>
+                        <div class="inputSignUp">
+                    <input type="submit" ng-click="signup()" value="SignUp"
+                        class="btn " id="signUpBtn" />
+
+                    </div>
+                
+            
+        </div>
+    </form>
+        
+        </div>
+    
+    <div class="footer" >
+        <h5> &#174;All rights are reserved</h5>
+    </div>
+    </div>
+    <!-- javascript -->
+    <script>
+        //signup password
+        var pass = document.getElementById("pswrd");
+        var fun = function () {
+
+            if (pass.type == "password") {
+                pass.type = "text";
+
+            }
+            else {
+
+                pass.type = "password";
+            }
+        }
+        //login password
+
+        var fun1 = function () {
+            var pass1 = document.getElementById("loginPswrd");
+            if (pass1.type == "password") {
+                pass1.type = "text";
+
+            }
+            else {
+
+                pass1.type = "password";
+            }
+        }
+    </script>
+</body>
+
+</html>

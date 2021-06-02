@@ -1,0 +1,86 @@
+<style>
+    .singleMain{
+    height:100%;
+    background-color: inherit;
+    
+}
+#singleTable{
+    width:100%;
+    background-color:rgb(182, 182, 190); 
+    box-shadow: 0px 1px 2px black; 
+}
+.singleStuTable{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+
+    height:100%;
+}
+.singleStuTable h3{
+    font-size: 2.5rem;
+    background-color: rgb(90, 87, 87);
+    width:100%;
+    margin-bottom: 0px;
+    text-align: center;
+    color:white;
+    padding-top:1%;
+    padding-bottom: 1%;
+    margin-top: 1%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0px 1px   2px black; 
+}
+
+#singleTable{
+/* border-collapse:separate; */
+/* table-layout:fixed; */
+
+
+
+}
+#singleTable th,td{
+
+   text-align:left;
+
+   padding-top: 0.7%;
+   padding-bottom: 0.7%;
+padding-left: 0.5%;
+padding-right:0.5em !important;   
+    
+}
+</style>
+
+
+<div class="container-fluid bg-success singleMain">
+    <div class="singleStuTable">
+    <h3>Student Complete Detail</h3>
+<table class="table-hover table-responsive"border="1px" id="singleTable">
+<thead>
+    <tr>
+        <th >
+            Name
+        </th>
+        <th>Age</th>
+<th>Roll no</th>
+<th>Course</th>
+<th>Address</th>
+<th>Mobile No</th>
+<th>Fees</th>
+    </tr>
+</thead>
+<tbody>
+    <tr ng-repeat="student in singleStuDetail">
+        <td>{{student.fname}} {{student.lname}}</td>
+         <td>{{student.age}}</td>
+        <td>{{student.rollno}}</td>
+        <td>{{student.course}}</td>
+        <td>{{student.address}}</td>
+        <td>{{student.mobileno}}</td>
+        <td>{{student.fees}}</td>
+    
+    </tr>
+</tbody>
+</table>
+
+</div></div>

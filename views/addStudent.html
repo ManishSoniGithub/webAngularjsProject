@@ -1,0 +1,180 @@
+<style>
+    .addStudent{
+height:100%;    
+width:80%;
+display: flex;
+justify-content: center;
+align-items: center;
+    }
+
+.form{
+
+    /* justify-content: center
+    
+    ;
+    flex-direction: column; */
+}
+#studentTable{
+    border-radius: 8px;
+    width:61%;
+    height:90%;
+    box-shadow: 2px,2px,2px rgb(136, 136, 175);
+}
+
+#studentTable{
+background-color:#F2DEDE;
+
+}
+
+#formHeading{
+    height:15%;
+    background-color: #282A35;
+    font-size: 2rem;
+    padding-bottom:0.5em;
+    text-align: center;
+    padding-right:6%;
+    color: white;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    text-shadow: 0px 0px 2px black;
+    
+}
+#formInfo{
+   color:black;
+   font-size:1.6rem;
+   text-shadow: 0px 0px 1px black;
+;
+}
+.addStudentInput{ 
+/* position:relative;
+left:11%;    */
+    width:42%;
+    height:62%;
+    box-shadow: 1px 1px 2px black;
+
+border:none;
+border-radius: 5px;
+padding-left: 2%;
+font-size: 1.6rem;
+       
+}
+#studentTable{
+    /* border-collapse:separate; */
+
+}
+#studentTable td{
+    padding-left: 14%;
+}
+#submitBtn{
+    width:60%;
+    color:white;
+    border-radius: 5em;
+background-color: #282A35;
+margin-right: 16%;
+height:50%;
+box-shadow: 1px 1px 2px black;
+;
+font-size: 100%;
+margin-bottom: 3.6%;
+
+}
+table {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+
+#studentTable{
+
+    /* border-spacing: 5px; */
+    /* border-collapse:separate; */
+
+}
+input[type=text],[list=course]{
+    font-size: 1.2em;
+}
+@media (max-width:600px){
+#formInfo{
+    font-size: 2.5vw;
+    /* color: lawngreen; */
+}
+}
+@media(max-width:547px){
+    #formHeading{
+        font-size: 2rem;
+        margin-top: 0%;
+    }
+}
+@media(max-width:394px){
+    #formHeading{
+        font-size: 1.5rem;
+        
+    }
+}
+</style>
+
+<div class="container  addStudent">
+     
+    <table class="table-responsive" id="studentTable">
+        <tr>
+            
+            <td colspan="2" id="formHeading">
+                <h5 id="formHeading">Add Student Data</h5></td>
+        </tr>
+        <tr >
+            <td colspan="2" style="height:1%;line-height: 1px; padding-top: 3%;" >
+                <p id="formInfo">*All fields are mandatory</p>
+            </td>
+        </tr>
+<tr>       
+     <form class="form  addStudentform">        
+    <td colspan="2" >
+        
+            <input class="addStudentInput" ng-model="student.fname"type="text" placeholder="First Name">
+        
+   <input class="addStudentInput"  ng-model="student.lname"type="text" placeholder="Last Name">
+</td></tr>
+<tr>
+    <td colspan="2"><input  class="addStudentInput"  ng-model="student.rollno" type="text" placeholder="Roll No.">
+    <input  class="addStudentInput"  ng-model="student.fees" type="text" placeholder="Fees"></td>
+</tr>
+<tr>
+    <td colspan="2"><input type="text" class="addStudentInput"  ng-model="student.age" placeholder='Age'>
+   <input list="course" class="addStudentInput"  ng-model="student.course" placeholder="Course"> 
+    <datalist id="course">
+<option value="BCA"></option>
+<option value="MCA"></option>
+<option value="PGDCA"></option>
+<option value="BCOM"></option>
+<option value="MCOM"></option>
+
+<option value="B.TECH"></option>
+<option value="M.TECH"></option>
+<option value="BBA"></option>
+<option value="MBA"></option>
+<option value="B.PHARMA"></option>
+    </td>
+</tr>
+
+
+    </datalist>
+<tr>
+    <td  colspan="2">
+    <input type="text"  class="addStudentInput" ng-model="student.address"placeholder="Address">
+    
+    
+
+        <input type="text"  class="addStudentInput"ng-model="student.mobileno" placeholder="Mobile no">
+    </td>
+</tr>
+<tr>
+    <td colspan="2" style="text-align: center;height:15%;padding-top: 0px;border-spacing: 20px;">
+        <input type="submit" value="Submit" ng-click="submitStudent()" class="btn"id="submitBtn">
+    </td>
+</tr>
+</table>   
+</form>
+</div>
